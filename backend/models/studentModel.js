@@ -1,4 +1,4 @@
-const {model ,schema, Types}= require('../connection');
+const {model , Types, Schema}= require('../connection');
 
 const mySchema=new Schema({
 
