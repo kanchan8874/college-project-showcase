@@ -1,15 +1,18 @@
 'use client';
 import axios from 'axios';
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 
 const Addproject = () => {
+
+  const [image, setImage] = useState('');
+
   const addprojectForm = useFormik({
     initialValues: {
       name: '',
       video: '',
-      images: ''
+      images: []
     },
     onSubmit: async (values) => {
       console.log(values);
@@ -33,6 +36,28 @@ const Addproject = () => {
       .then((result) => {
         console.log(result.data);
         toast.success('flie uploaded successfully');
+        addprojectForm.setFieldValue('images', [result.data.url]);
+        setImage(result.data.url);
+      }).catch((err) => {
+        console.log(err);
+        toast.error('failed to upload file');
+
+      });
+
+  }
+
+  const uploadVideo = (e) => {
+    const file = e.target.files[0];
+    const forData = new FormData();
+    forData.append('file', file);
+    forData.append('upload_preset', 'mypreset8874');
+    forData.append('cloud_name ', 'dqumvzhys');
+
+    axios.post('https://api.cloudinary.com/v1_1/dqumvzhys/video/upload', forData)
+      .then((result) => {
+        console.log(result.data);
+        toast.success('flie uploaded successfully');
+        addprojectForm.setFieldValue('video', result.data.url);
         setImage(result.data.url);
       }).catch((err) => {
         console.log(err);
@@ -103,10 +128,8 @@ const Addproject = () => {
                   <div className="relative">
                     <input
                       type="file"
-                      id="video"
-                      onChange={uploadImage}
-                      value={addprojectForm.values.video}
-                      
+
+                      onChange={uploadVideo}
                       className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       required=""
                       aria-describedby="password-error"
@@ -139,10 +162,10 @@ const Addproject = () => {
                   <div className="relative">
                     <input
                       type="file"
-                      id="images"
+
                       onChange={uploadImage}
-                      value={addprojectForm.values.images}
-                     
+
+
                       className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       required=""
                       aria-describedby="password-error"

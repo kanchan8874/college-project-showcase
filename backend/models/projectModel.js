@@ -1,10 +1,10 @@
 const { model, Schema, Types, } = require('../connection');
 
 const mySchema = new Schema({
-    student: { type: Types.ObjectId, ref: 'student' },
+    project: { type: Types.ObjectId, ref: 'project' },
     name: { type: String, unique: true },
     video: { type: String },
-    images: { type: String },
+    images: { type: Array },
     type: { type: String },
     createdAt:{type:Date, default:Date.now}
 
