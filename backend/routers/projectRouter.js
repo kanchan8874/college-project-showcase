@@ -44,7 +44,7 @@ router.get('/getbycity/:city', (req, res) => {
 
 //getbyid
 router.get('/getbyid/:id', (req, res) => {
-    Model.findById(req.params.id)
+    Model.findById(req.params.id).populate('student')
         .then((result) => {
             res.status(200).json(result);
         }).catch((err) => {

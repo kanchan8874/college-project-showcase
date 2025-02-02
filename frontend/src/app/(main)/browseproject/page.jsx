@@ -29,7 +29,7 @@ const BrowseProject = () => {
             projectList.map(project => (
               <div key={project._id} className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div className="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
-                  <img src={project.image} alt="" className='rounded-lg h-full w-full object-cover' />
+                  <img src={project.images[0]} alt="" className='rounded-lg h-full w-full object-cover' />
                 </div>
                 <div className="p-4 md:p-6">
 
@@ -49,7 +49,7 @@ const BrowseProject = () => {
                   </a>
                   <Link
                     className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                    href={"/productDetails/" + project._id}
+                    href={"/view-project/" + project._id}
                   >
                     View Project
                   </Link>
