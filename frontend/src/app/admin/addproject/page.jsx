@@ -13,6 +13,7 @@ const categories = [
   'Data Science',
   'Artificial Intelligence',
   'Cyber Security',
+  'machine development',
 ]
 
 const Addproject = () => {
@@ -41,7 +42,7 @@ const Addproject = () => {
     },
     onSubmit: async (values) => {
       console.log(values);
-      const res = await axios.post('http://localhost:5000/project/add', values)
+      const res = await axios.post('http://localhost:5000/project/add', { ...values, approved: true })
       console.log(res.data);
       console.log(res.status);
       if (res.status === 200) {
@@ -112,7 +113,7 @@ const Addproject = () => {
                     htmlFor="email"
                     className="block text-sm mb-2 dark:text-white"
                   >
-                    Name
+                    Project Name
                   </label>
                   <div className="relative">
                     <input
@@ -385,10 +386,11 @@ const Addproject = () => {
                 </div>
                 {/* End Checkbox */}
                 <button
+                  disabled={!addprojectForm.values.images[0] || !addprojectForm.values.video}
                   type="submit"
                   className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Sign in
+                  Add Project
                 </button>
               </div>
             </form>

@@ -1,6 +1,7 @@
 'use client';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const ManageProject = () => {
 
@@ -21,6 +22,19 @@ const ManageProject = () => {
   useEffect(() => {
     getStudentData();
   }, []);
+
+  const deleteProject = (id) => {
+    axios.delete('http://localhost:5000/project/delete/' + id)
+      .then((result) => {
+        toast.success('project Deleted Successfully');
+        getStudentData();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to delete project');
+      })
+
+  }
 
   return (
     <div className=''>
@@ -45,14 +59,10 @@ const ManageProject = () => {
                     <td className='p-3'>{project.video} </td>
                     <td className='p-3'>{project.images} </td>
                     <td className='p-3'>{new Date(project.createdAt).toDateString()}</td>
-                    {/* <td className='p-3'>
-                                            <button onClick={() => { deleteUser(user._id) }}
-                                                className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
-                                        </td>
-                                        <td className='p-3'>
-                                            <Link href={'/updateuser/' + user._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
-
-                                        </td> */}
+                    <td className='p-3'>
+                      <button onClick={() => { deleteProject(project._id) }}
+                        className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
+                    </td>
 
                   </tr>
                 )
