@@ -14,6 +14,29 @@ const categories = [
     'Artificial Intelligence',
     'Cyber Security',
 ]
+const branch = [
+    'C.S.E.',
+    'M.E.',
+    'E.E.',
+    'E.C.',
+    'C.E.',
+    'I.T.',
+    'N.E.',
+    'B.E.',
+]
+const batch = [
+    '2015',
+    '2016',
+    '2017',
+    '2018',
+    '2019',
+    '2020',
+    '2021',
+    '2022',
+    '2023',
+    '2024',
+    '2025',
+]
 
 const Addproject = () => {
 
@@ -219,7 +242,7 @@ const Addproject = () => {
                                         Branch
                                     </label>
                                     <div className="relative">
-                                        <input
+                                        <select
                                             type="text"
                                             id="branch"
                                             onChange={addprojectForm.handleChange}
@@ -227,7 +250,14 @@ const Addproject = () => {
                                             className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="email-error"
-                                        />
+                                        >
+                                            <option value="">Select Branch</option>
+                                            {
+                                                branch.map(category => (
+                                                    <option key={category} value={category}>{category}</option>
+                                                ))
+                                            }
+                                        </select>
                                         <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                                             <svg
                                                 className="size-5 text-red-500"
@@ -253,7 +283,7 @@ const Addproject = () => {
                                         Batch
                                     </label>
                                     <div className="relative">
-                                        <input
+                                        <select
                                             type="number"
                                             id="batch"
                                             onChange={addprojectForm.handleChange}
@@ -261,8 +291,16 @@ const Addproject = () => {
                                             className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="email-error"
-                                        />
-                                       
+                                        >
+                                            <option value="">Select Batch</option>
+                                            {
+                                                batch.map(category => (
+                                                    <option key={category} value={category}>{category}</option>
+                                                ))
+                                            }
+
+                                        </select>
+
                                         <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                                             <svg
                                                 className="size-5 text-red-500"
