@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@preline/dropdown": "^2.5.2",
     "axios": "^1.7.9",
     "formik": "^2.4.6",
     "next": "15.1.5",

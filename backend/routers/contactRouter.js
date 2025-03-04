@@ -1,5 +1,5 @@
 const express = require('express');
-const Model = require('../models/projectModel');
+const Model = require('../models/contactModel');
 
 const router = express.Router();
 
@@ -18,17 +18,6 @@ router.post('/add', (req, res) => {
 });
 // getall
 router.get('/getall', (req, res) => {
-    Model.find({ approved: true })
-        .then((result) => {
-            res.json(result)
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-// getall
-router.get('/getallproject', (req, res) => {
     Model.find()
         .then((result) => {
             res.json(result)
@@ -38,20 +27,6 @@ router.get('/getallproject', (req, res) => {
         });
 });
 
-
-//denotes url parameater....
-//getbycity
-router.get('/getbycity/:city', (req, res) => {
-    Model.find({ city: req.params.city })
-        .then((result) => {
-            res.status(200).json(result);
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json(result);
-        });
-
-
-});
 
 //getbyid
 router.get('/getbyid/:id', (req, res) => {
@@ -92,3 +67,4 @@ router.put('/update/:id', (req, res) => {
 
 
 module.exports = router;
+

@@ -1,11 +1,14 @@
 const express = require('express');
 const Model = require('../models/userModel');
-
 const router = express.Router();
+
+require('dotenv').config();
+const jwt = require('jsonwebtoken');
+const verifyToken = require('../middleware/verifytoken');
 
 // post
 router.post('/add', (req, res) => {
-    console.log(req.body);    
+    console.log(req.body);
     new Model(req.body).save()
         .then((result) => {
             res.status(200).json(result);
@@ -52,7 +55,22 @@ router.get('/getbyid/:id', (req, res) => {
             res.status(500).json(result);
 
         });
+});
+
+
+router.get('/getuser', verifyToken, (req, res) => {
+    console.log(req.user);
+    
+    Model.findById(req.user._id)
+        .then((result) => {
+            res.status(200).json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(result);
+
+        });
 })
+
 //delete
 router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
@@ -79,5 +97,26 @@ router.put('/update/:id', (req, res) => {
 
 });
 
+router.post('/authenticate', (req, res) => {
+    Model.findOne(req.body)
+        .then((result) => {
+            if (result) {
+                const { email, _id } = result;
+                const payload = { _id, email };
+                const token = jwt.sign(
+                    payload,
+                    process.env.JWT_SECRET,
+                    { expiresIn: '2d' }
+                );
+                res.status(200).json({ token });
+            } else {
+                res.status(403).json({ message: 'Invalid username or password' });
+            }
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+
+        });
+})
 
 module.exports = router;
