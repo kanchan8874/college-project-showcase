@@ -116,10 +116,10 @@ const Addproject = () => {
     }
     return (
         <div>
-            <div className=" max-w-xl mx-auto mt-7 bg-white border border-gray-200  shadow-2xl dark:bg-neutral-900 dark:border-neutral-700 rounded-xl">
+            <div className=" max-w-xl mx-auto mt-7 bg-white border border-gray-200  shadow-2xl dark:bg-neutral-900 dark:border-neutral-700 rounded-xl mb-7">
                 <div className="p-4 sm:p-7 bg-gradient-to-r from-white to-blue-100">
                     <div className="text-center">
-                        <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
+                        <h1 className="block text-2xl font-bold text-gray-800 dark:text-white font-serif">
                             Student Add Project From
                         </h1>
                         <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
@@ -133,7 +133,7 @@ const Addproject = () => {
                                 <div>
                                     <label
                                         htmlFor="email"
-                                        className="block text-sm mb-2 dark:text-white"
+                                        className="block text-sm mb-2 dark:text-white font-serif"
                                     >
                                         Project Name
                                     </label>
@@ -165,7 +165,7 @@ const Addproject = () => {
                                 {/* End Form Group */}
                                 {/* Form Group */}
                                 <div>
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex justify-between items-center font-serif">
                                         <label
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
@@ -199,7 +199,7 @@ const Addproject = () => {
                                 {/* end Form Group */}
                                 {/* Form Group */}
                                 <div>
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex justify-between items-center font-serif">
                                         <label
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
@@ -234,10 +234,10 @@ const Addproject = () => {
                                 </div>
                                 {/* End Form Group */}
                                 {/* Form Group */}
-                                <div>
+                                <div className='font-serif'>
                                     <label
                                         htmlFor="email"
-                                        className="block text-sm mb-2 dark:text-white"
+                                        className="block text-sm mb-2 dark:text-white "
                                     >
                                         Branch
                                     </label>
@@ -275,7 +275,7 @@ const Addproject = () => {
                                 </div>
                                 {/* End Form Group */}
                                 {/* Form Group */}
-                                <div>
+                                <div className='font-serif'>
                                     <label
                                         htmlFor="email"
                                         className="block text-sm mb-2 dark:text-white"
@@ -318,7 +318,7 @@ const Addproject = () => {
                                 </div>
                                 {/* End Form Group */}
                                 {/* Form Group */}
-                                <div>
+                                <div className='font-serif'>
                                     <label
                                         htmlFor="email"
                                         className="block text-sm mb-2 dark:text-white"
@@ -345,7 +345,7 @@ const Addproject = () => {
                                 </div>
                                 {/* End Form Group */}
                                 {/* Form Group */}
-                                <div>
+                                <div className='font-serif'>
                                     <label
                                         htmlFor="email"
                                         className="block text-sm mb-2 dark:text-white"
@@ -379,7 +379,7 @@ const Addproject = () => {
                                 </div>
                                 {/* End Form Group */}
                                 {/* Form Group */}
-                                <div>
+                                <div className='font-serif'>
                                     <label
                                         htmlFor="student"
                                         className="block text-sm mb-2 dark:text-white"

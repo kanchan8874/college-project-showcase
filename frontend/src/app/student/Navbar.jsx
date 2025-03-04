@@ -1,42 +1,35 @@
+'use client';
 import Link from 'next/link';
 import React from 'react';
 
 const StudentNavbar = () => {
     return (
-        <div className="bg-gradient-to-r from-blue-400 to-gray-800 rounded-full border-4 border-white lg:pb-0 ">
-            <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-                <header className="flex items-center justify-between py-3 md:py-5">
+        <div className="bg-gradient-to-r from-blue-950 bg-blue-950 rounded-full  h-20 justify-between  ">
+            <div className="mx-auto max-w-screen-lg  px-4 md:px-6">
+                <header className="flex  justify-between py-3 md:py-4 items-center">
                     {/* logo - start */}
-                    <a
+                    <Link
                         href="/"
                         className="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
                         aria-label="logo"
                     >
-                        <svg
-                            width={95}
-                            height={94}
-                            viewBox="0 0 95 94"
-                            className="h-auto w-6 text-white"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-                        </svg>
-                        Flowrift
-                    </a>
+                        <div className='bg-white p-2 rounded-2xl '>
+                            <img className='size-12' src="/images/logo2-removebg.png" alt="logo" />
+                        </div>
+                    </Link>
                     {/* logo - end */}
                     {/* nav - start */}
-                    <nav className="hidden gap-12 lg:flex">
+                    <nav className="hidden gap-8 lg:flex ">
                         <Link
                             href="/student/addproject"
-                            className="text-lg font-semibold text-white transition duration-100 hover:text-indigo-200 active:text-indigo-300"
+                            className="text-lg font-semibold p-2 xl:p-2 hover:bg-yellow-600 rounded-full text-white  mx-4"
                         >
                             Addproject
                         </Link>
 
                         <Link
                             href="/student/profile"
-                            className="text-lg font-semibold text-white transition duration-100 hover:text-indigo-200 active:text-indigo-300"
+                            className="text-lg font-semibold p-2 xl:p-2 hover:bg-yellow-600 rounded-full text-white  mx-4"
                         >
                             profile
                         </Link>
@@ -44,18 +37,18 @@ const StudentNavbar = () => {
                     {/* nav - end */}
                     {/* buttons - start */}
                     <div className="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-                        <a
-                            href="#"
-                            className="inline-block rounded-lg px-4 py-2 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:text-indigo-200 focus-visible:ring active:text-indigo-300 md:text-base"
+                        <Link
+                            href="/studentlogin"
+                            className="inline-block rounded-lg px-4 py-2 text-center text-lg font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:text-indigo-200 focus-visible:ring active:text-indigo-300 md:text-base"
                         >
                             Sign in
-                        </a>
-                        <a
-                            href="#"
-                            className="inline-block rounded-lg bg-white px-8 py-2 text-center text-sm font-semibold text-indigo-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-200 focus-visible:ring active:bg-gray-300 md:text-base"
+                        </Link>
+                        <Link
+                            href="/signup"
+                            className="inline-block rounded-lg bg-white px-8 py-2 text-center text-sm font-bold text-black outline-none"
                         >
-                            Sign up
-                        </a>
+                            Logout
+                        </Link>
                     </div>
                     <button
                         type="button"
@@ -81,5 +74,4 @@ const StudentNavbar = () => {
         </div>
     );
 }
-
 export default StudentNavbar;
