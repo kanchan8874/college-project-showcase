@@ -26,7 +26,7 @@ const Viewproject = () => {
     return (
         <div className="bg-white py-6 sm:py-8 lg:py-12">
             <div className="mx-auto max-w-screen-lg px-4 md:px-8">
-                <div className="grid gap-8 md:grid-cols-2">
+                <div className="grid gap-8 md:grid-cols-2  hover:scale-105">
                     {/* images - start */}
                     <div className="space-y-4">
                         <div className="relative overflow-hidden rounded-lg bg-gray-100">
@@ -81,7 +81,7 @@ const Viewproject = () => {
                 </div>
                 {/* video - start */}
                 <div className="mt-10">
-                    <div className="relative overflow-hidden rounded-lg bg-gray-100">
+                    <div className="relative overflow-hidden rounded-lg bg-gray-100  hover:scale-105">
                         <h2 className='font-bold'>Project Video</h2>
                         <video
                             controls
@@ -96,7 +96,7 @@ const Viewproject = () => {
                 <div className="bg-white py-6 sm:py-8 lg:py-12">
                     <div className="mx-auto max-w-screen-xl px-4 md:px-8">
                         {/* text - start */}
-                        <div className="mb-10 md:mb-16">
+                        <div className="mb-10 md:mb-16 ">
                             <h2 className=" mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
                                 Participation-students details
                             </h2>

@@ -1,26 +1,30 @@
 'use client';
+import React from 'react'
 import axios from 'axios';
 import { useFormik } from 'formik';
-import React from 'react'
+import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 
 const Studentlogin = () => {
+  const router = useRouter();
   const loginForm = useFormik({
     initialValues: {
-      email: '',
+      rollno: '',
       password: ''
     },
     onSubmit: async (values) => {
       console.log(values);
-      const res = await axios.post('http://localhost:5000/student/', values)
+      const res = await axios.post('http://localhost:5000/student/authenticate', values)
       console.log(res.data);
       console.log(res.status);
       if (res.status === 200) {
         toast.success('Logged in successfully');
         localStorage.setItem('token', res.data.token);
+        router.push('/student/addproject');
       }
     }
   })
+
 
   return (
     <div>
@@ -28,7 +32,7 @@ const Studentlogin = () => {
         <div className="p-4 sm:p-7">
           <div className="text-center">
             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-             Student login
+              Student login
             </h1>
             <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
 
@@ -80,17 +84,17 @@ const Studentlogin = () => {
                 {/* Form Group */}
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="roll no"
                     className="block text-sm mb-2 dark:text-white"
                   >
-                    Email address
+                    ROLL NO
                   </label>
-                  <div className="relative">
+                  <div className="relative border">
                     <input
-                      type="email"
-                      id="email"
+                      type="number"
+                      id="rollno"
                       onChange={loginForm.handleChange}
-                      value={loginForm.values.email}
+                      value={loginForm.values.rollno}
                       className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       required=""
                       aria-describedby="email-error"

@@ -12,18 +12,18 @@ const signup = () => {
         },
         onSubmit: async (values) => {
             console.log(values);
-            const res = await axios.post('http://localhost:5000/doctor/authenticate', values)
+            const res = await axios.post('http://localhost:5000/user/add', values)
             console.log(res.data);
             console.log(res.status);
             if (res.status === 200) {
-                toast.success('Logged in successfully');
-                localStorage.setItem('token', res.data.token);
+                toast.success('Register in successfully');
+                localStorage.setItem('token', res.data.token);  // then catch
             }
         }
     })
 
     return (
-        <div className='max-w-xl mx-auto mt-7'>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-white to-white">
             <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-4 sm:p-7">
                     <div className="text-center">
@@ -85,7 +85,7 @@ const signup = () => {
                                     >
                                         Email address
                                     </label>
-                                    <div className="relative">
+                                    <div className="relative border">
                                         <input
                                             type="email"
                                             id="email"
@@ -96,7 +96,7 @@ const signup = () => {
                                             required=""
                                             aria-describedby="email-error"
                                         />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
+                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3 ">
                                             <svg
                                                 className="size-5 text-red-500"
                                                 width={16}
@@ -122,7 +122,7 @@ const signup = () => {
                                     >
                                         Password
                                     </label>
-                                    <div className="relative">
+                                    <div className="relative border">
                                         <input
                                             type="password"
                                             id="password"
@@ -159,7 +159,7 @@ const signup = () => {
                                     >
                                         Confirm Password
                                     </label>
-                                    <div className="relative">
+                                    <div className="relative border">
                                         <input
                                             type="password"
                                             id="confirm-password"

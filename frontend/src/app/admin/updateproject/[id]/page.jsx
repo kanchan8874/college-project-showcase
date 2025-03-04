@@ -1,58 +1,18 @@
 'use client';
 import axios from 'axios';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
-const categories = [
-  'Web Development',
-  'App Development',
-  'Software Development',
-  'Game Development',
-  'Machine Learning',
-  'Data Science',
-  'Artificial Intelligence',
-  'Cyber Security',
-  'machine development',
-]
-const branch = [
-  'C.S.E.',
-  'M.E.',
-  'E.E.',
-  'E.C.',
-  'C.E.',
-  'I.T.',
-  'N.E.',
-  'B.E.',
-]
-const batch = [
-  '2015',
-  '2016',
-  '2017',
-  '2018',
-  '2019',
-  '2020',
-  '2021',
-  '2022',
-  '2023',
-  '2024',
-  '2025',
-]
+
 
 const Addproject = () => {
-
+  const router = useRouter();
+  const [projectList, setProjectList] = useState([null]);
+  const {id} = useParams();
   const [image, setImage] = useState('');
-  const [studentList, setStudentList] = useState([]);
 
-  const fetchStudents = async () => {
-    const res = await axios.get('http://localhost:5000/student/getall');
-    console.log(res.data);
-    setStudentList(res.data);
-  }
-
-  useEffect(() => {
-    fetchStudents();
-  }, [])
 
   const addprojectForm = useFormik({
     initialValues: {
@@ -62,7 +22,6 @@ const Addproject = () => {
       batch: 0,
       images: [],
       student: '',
-      approved: true
     },
     onSubmit: async (values) => {
       console.log(values);
@@ -117,12 +76,12 @@ const Addproject = () => {
 
   }
   return (
-    <div className=' mt-5 mb-5' >
+    <div className='bg-gradient-to-r  bg-white' >
       <div className=" max-w-xl mx-auto mt-0 bg-white border rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
         <div className="p-4 sm:p-7 bg-gradient-to-r from-white to-blue-100">
           <div className="text-center">
             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-              Add Project From
+              updateProject From
             </h1>
             <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
             </p>

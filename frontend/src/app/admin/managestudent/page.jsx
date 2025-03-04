@@ -1,5 +1,6 @@
 'use client';
 import axios from 'axios';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const ManageStudent = () => {
@@ -49,14 +50,14 @@ const ManageStudent = () => {
                                         <td className='p-3'>{student.course} </td>
                                         <td className='p-3'>{student.branch} </td>
                                         <td className='p-3'>{new Date(student.createdAt).toDateString()}</td>
-                                        {/* <td className='p-3'>
+                                        <td className='p-3'>
                                             <button onClick={() => { deleteUser(user._id) }}
                                                 className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
                                         </td>
                                         <td className='p-3'>
-                                            <Link href={'/updateuser/' + user._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
+                                            <Link href={'/updatestudent/' + student._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
 
-                                        </td> */}
+                                        </td>
 
                                     </tr>
                                 )

@@ -1,10 +1,12 @@
 'use client';
 import axios from 'axios';
 import { useFormik } from 'formik';
-import React from 'react'
+import { useRouter } from 'next/navigation';
+import React from 'react';
 import toast from 'react-hot-toast';
 
 const Login = () => {
+  const router = useRouter();
   const loginForm = useFormik({
     initialValues: {
       email: '',
@@ -12,26 +14,27 @@ const Login = () => {
     },
     onSubmit: async (values) => {
       console.log(values);
-      const res = await axios.post('http://localhost:5000/doctor/authenticate', values)
+      const res = await axios.post('http://localhost:5000/user/authenticate', values);
       console.log(res.data);
       console.log(res.status);
       if (res.status === 200) {
         toast.success('Logged in successfully');
         localStorage.setItem('token', res.data.token);
+        router.push('/admin/addproject');
       }
     }
-  })
+  });
 
   return (
-    <div>
-      <div className="max-w-xl mx-auto mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
-        <div className="p-4 sm:p-7">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-white to-white">
+      <div className="max-w-xl mx-auto mt-7 bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-neutral-900 dark:border-neutral-700">
+        <div className="p-6 sm:p-8">
           <div className="text-center">
-            <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-              login
+            <h1 className="block text-3xl font-bold text-gray-800 dark:text-white">
+              Sign in
             </h1>
             <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-
+              Don't have an account?{' '}
               <a
                 className="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
                 href="../examples/html/signup.html"
@@ -43,7 +46,7 @@ const Login = () => {
           <div className="mt-5">
             <button
               type="button"
-              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 transition duration-150"
             >
               <svg
                 className="w-4 h-auto"
@@ -176,7 +179,7 @@ const Login = () => {
                 {/* End Checkbox */}
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                  className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none transition duration-150"
                 >
                   Sign in
                 </button>
@@ -187,8 +190,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-
-  )
-}
+  );
+};
 
 export default Login;
