@@ -64,17 +64,17 @@ const Profile = () => {
     return (
         <div>
             <div className="  dark:bg-gray-800 flex flex-wrap items-center  justify-center mt-5 mb-5">
-                <div className="container lg:w-1/3 sm:w-full md:w-1/2 bg-white shadow-2xl rounded-xl transform duration-200 easy-in-out">
+                <div className="container lg:w-1/3 sm:w-full md:w-1/2 bg-white shadow-2xl rounded-xl transform duration-200 easy-in-out border border-gray-300">
                     <div className="h-32 overflow-hidden">
                         <img
                             className="w-full"
-                            src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                            src=""
                             alt=""
                         />
                     </div>
                     <div className="flex justify-center px-5 -mt-12">
                         <img
-                            className="h-32 w-32 bg-white p-2 rounded-full object-cover"
+                            className="h-32 w-32 bg-black p-2 rounded-full object-cover"
                             src={userData?.avatar}
                             alt="Profile"
                         />

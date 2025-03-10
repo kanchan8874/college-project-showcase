@@ -25,7 +25,6 @@ const Contact = () => {
     }
   });
 
-
   return (
     <>
       {/* Contact Us */}
