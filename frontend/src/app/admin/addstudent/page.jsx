@@ -4,6 +4,39 @@ import { useFormik } from 'formik';
 import React from 'react'
 import toast from 'react-hot-toast';
 
+const categories = [
+    'Web Development',
+    'App Development',
+    'Software Development',
+    'Game Development',
+    'Machine Learning',
+    'Data Science',
+    'Artificial Intelligence',
+    'Cyber Security',
+]
+const branch = [
+    'C.S.E.',
+    'M.E.',
+    'E.E.',
+    'E.C.',
+    'C.E.',
+    'I.T.',
+    'N.E.',
+    'B.E.',
+]
+const batch = [
+    '2015',
+    '2016',
+    '2017',
+    '2018',
+    '2019',
+    '2020',
+    '2021',
+    '2022',
+    '2023',
+    '2024',
+    '2025',
+]
 const Addstudent = () => {
     const addstudentForm = useFormik({
         initialValues: {
@@ -26,10 +59,10 @@ const Addstudent = () => {
     })
     return (
         <div>
-            <div className="max-w-xl mx-auto mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
+            <div className="max-w-xl mx-auto mt-7 mb-7 bg-white border border-gray-200 rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-4 sm:p-7">
                     <div className="text-center">
-                        <h1 className="block text-2xl font-bold text-gray-800 dark:text-white ">
+                        <h1 className="block text-2xl font-bold text-gray-800 dark:text-white font-serif ">
                             Addstudent From
                         </h1>
                         <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
@@ -40,7 +73,7 @@ const Addstudent = () => {
                         <form onSubmit={addstudentForm.handleSubmit}>
                             <div className="grid gap-y-4">
                                 {/* Form Group */}
-                                <div>
+                                <div className='font-serif'>
                                     <label
                                         htmlFor="email"
                                         className="block text-sm mb-2 dark:text-white"
@@ -57,25 +90,13 @@ const Addstudent = () => {
                                             required=""
                                             aria-describedby="email-error"
                                         />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
                                     </div>
 
                                 </div>
                                 {/* End Form Group */}
                                 {/* Form Group */}
                                 <div>
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex justify-between items-center font-serif">
                                         <label
                                             htmlFor="rollno"
                                             className="block text-sm mb-2 dark:text-white"
@@ -89,28 +110,16 @@ const Addstudent = () => {
                                             id="rollno"
                                             onChange={addstudentForm.handleChange}
                                             value={addstudentForm.values.rollno}
-                                            className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                            className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm "
                                             required=""
                                             aria-describedby="password-error"
                                         />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
                                     </div>
                                 </div>
                                 {/* end Form Group */}
                                 {/* Form Group */}
                                 <div>
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex justify-between items-center ">
                                         <label
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
@@ -128,18 +137,6 @@ const Addstudent = () => {
                                             required=""
                                             aria-describedby="password-error"
                                         />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
                                     </div>
                                 </div>
                                 {/* end Form Group */}
@@ -154,7 +151,7 @@ const Addstudent = () => {
                                         </label>
                                     </div>
                                     <div className="relative">
-                                        <input
+                                        <select
                                             type="number"
                                             id="batch"
                                             onChange={addstudentForm.handleChange}
@@ -162,19 +159,14 @@ const Addstudent = () => {
                                             className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="password-error"
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
+                                        >
+                                            <option value="">Select Batch</option>
+                                            {
+                                                batch.map(category => (
+                                                    <option key={category} value={category}>{category}</option>
+                                                ))
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                                 {/* End Form Group */}
@@ -189,7 +181,7 @@ const Addstudent = () => {
                                         </label>
                                     </div>
                                     <div className="relative">
-                                        <input
+                                        <select
                                             type="text"
                                             id="course"
                                             onChange={addstudentForm.handleChange}
@@ -197,19 +189,15 @@ const Addstudent = () => {
                                             className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="password-error"
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
+                                        >
+                                            {
+                                                categories.map(category => (
+                                                    <option key={category} value={category}>{category}</option>
+                                                ))
+                                            }
+                                        </select>
+
+
                                     </div>
                                 </div>
                                 {/* end Form Group */}
@@ -224,7 +212,7 @@ const Addstudent = () => {
                                         </label>
                                     </div>
                                     <div className="relative">
-                                        <input
+                                        <select
                                             type="text"
                                             id="branch"
                                             onChange={addstudentForm.handleChange}
@@ -232,19 +220,14 @@ const Addstudent = () => {
                                             className="py-3 px-4 block w-full border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="password-error"
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
+                                        >
+                                            {
+                                                branch.map(category => (
+                                                    <option key={category} value={category}>{category}</option>
+                                                ))
+                                            }
+                                        </select>
+
                                     </div>
                                 </div>
                                 {/* end Form Group */}

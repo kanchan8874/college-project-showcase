@@ -23,26 +23,27 @@ const Contact = () => {
         localStorage.setItem('token', res.data.token);  // then catch
       }
     }
-  })
-  return (
+  });
 
+
+  return (
     <>
       {/* Contact Us */}
-      <div div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-slate-200 " >
+      <div div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-2 lg:py-2 mx-auto   " >
         <div className="max-w-xl mx-auto">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white">
               Contact us
             </h1>
-            <p className="mt-1 text-gray-600 dark:text-neutral-400">
+            <p className="mt-3 text-gray-600 dark:text-neutral-400 font-serif">
               We'd love to talk about how we can help you.
             </p>
           </div>
         </div>
-        <div className="mt-8 max-w-lg mx-auto">
+        <div className="mt-5 max-w-lg mx-auto">
           {/* Card */}
-          <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-neutral-800 bg-white ">
-            <h2 className="mb-8 text-xl font-semibold text-gray-800 dark:text-neutral-200">
+          <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-neutral-800 bg-white shadow-2xl ">
+            <h2 className="mb-8 text-xl font-semibold font-serif text-gray-800 dark:text-neutral-200">
               Fill in the form
             </h2>
             <form onSubmit={contectForm.handleSubmit}>
@@ -52,7 +53,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="firstName"
-                      className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
+                      className="block  mb-2 text-sm  text-gray-700 font-medium dark:text-white"
                     >
                       First Name
                     </label>
@@ -62,7 +63,7 @@ const Contact = () => {
                       onChange={contectForm.handleChange}
                       value={contectForm.values.firstName}
 
-                      className=" border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className=" border border-gray-300 py-3 px-4 block w-full  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     />
                   </div>
                   <div>
@@ -77,7 +78,7 @@ const Contact = () => {
                       id="lastName"
                       onChange={contectForm.handleChange}
                       value={contectForm.values.lastName}
-                      className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="border border-gray-300  py-3 px-4 block w-full  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     />
                   </div>
                 </div>
@@ -97,7 +98,7 @@ const Contact = () => {
                       onChange={contectForm.handleChange}
                       value={contectForm.values.email}
                       autoComplete="email"
-                      className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="border border-gray-300 py-3 px-4 block w-full  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     />
                   </div>
                   <div>
@@ -112,7 +113,7 @@ const Contact = () => {
                       id="phoneno"
                       onChange={contectForm.handleChange}
                       value={contectForm.values.phoneno}
-                      className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="border border-gray-300 py-3 px-4 block w-full  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     />
                   </div>
                 </div>
@@ -120,7 +121,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="details"
-                    className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
+                    className="block mb-2 text-sm text-gray-700 font-medium dark:text-white "
                   >
                     Details
                   </label>
@@ -130,7 +131,7 @@ const Contact = () => {
                     value={contectForm.values.details}
 
                     rows={4}
-                    className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    className="border py-3 px-4 block w-full border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     defaultValue={""}
                   />
                 </div>
@@ -145,8 +146,8 @@ const Contact = () => {
                 </button>
               </div>
               <div className="mt-3 text-center">
-                <p className="text-sm text-gray-500 dark:text-neutral-500">
-                  We'll get back to you in 1-2 business days.
+                <p className="text-sm text-gray-600 dark:text-neutral-500 font-serif">
+                  We'll get back to you in 1-2  days.
                 </p>
               </div>
             </form>
@@ -154,13 +155,7 @@ const Contact = () => {
           {/* End Card */}
         </div>
       </div >
-      {/* End Contact Us */}
-
-
-      {/* </div> */}
     </>
-
-
   )
 }
 export default Contact;

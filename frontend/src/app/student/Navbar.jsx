@@ -31,18 +31,13 @@ const StudentNavbar = () => {
                             href="/student/profile"
                             className="text-lg font-semibold p-2 xl:p-2 hover:bg-yellow-600 rounded-full text-white  mx-4"
                         >
-                            profile
+                            Profile
                         </Link>
                     </nav>
                     {/* nav - end */}
                     {/* buttons - start */}
                     <div className="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-                        <Link
-                            href="/studentlogin"
-                            className="inline-block rounded-lg px-4 py-2 text-center text-lg font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:text-indigo-200 focus-visible:ring active:text-indigo-300 md:text-base"
-                        >
-                            Sign in
-                        </Link>
+                      
                         <Link
                             href="/signup"
                             className="inline-block rounded-lg bg-white px-8 py-2 text-center text-sm font-bold text-black outline-none"

@@ -37,29 +37,32 @@ const ManageProject = () => {
   }
 
   const approveProject = (id, status) => {
-    axios.put('http://localhost:5000/project/update/' + id, {approved : status})
-    .then((result) => {
-      toast.success('project updated Successfully');
-      getStudentData();
-    })
-    .catch((err) => {
-      console.log(err);
-      toast.error('Failed to delete project');
-    })
+    axios.put('http://localhost:5000/project/update/' + id, { approved: status })
+      .then((result) => {
+        toast.success('project updated Successfully');
+        getStudentData();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to delete project');
+      })
   }
 
   return (
     <div className=''>
       <div className='container mx-auto py-10'>
-        <h1 className='text-center text-2xl font-bold'>Manage project</h1>
+        <h1 className="mb-2 text-2xl capitalize  font-extrabold leading-none tracking-normal text-gray-900 md:text-5xl md:tracking-tight lg:mb-2 text-center font-serif">
+          <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-purple-800 to-green-600 lg:inline">Manage project </span>
+        </h1>
         <table className='w-full'>
           <thead>
-            <tr className='bg-gray-600 text-white font-bold'>
+            <tr className='bg-gray-600 text-white font-bold text-lg font-serif'>
               <th className='p-3'>Name</th>
               <th className='p-3'>video</th>
               <th className='p-3'>images</th>
-              <th className='p-3'>Created At</th>
-              {/* <th className='p-3' colSpan={2}></th> */}
+              <th className='p-3  '>Created At</th>
+              <th className='p-3  '>Delete</th>
+              <th className='p-3  '>Update</th>
             </tr>
           </thead>
           <tbody>

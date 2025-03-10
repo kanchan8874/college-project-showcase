@@ -1,30 +1,33 @@
 import React from 'react'
 import MainNavbar from './(main)/Navbar';
+import Link from 'next/link';
 
 const Home = () => {
     return (
         <>
             <MainNavbar />
             <div className='pt-0'>
-
                 <section className="pt-24 bg-white">
-                    <div className="px-12 mx-auto max-w-7xl">
-                        <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
-                            <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
-                                <span>Start</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">With Curiosity, </span> <span>Finish with Excellence </span>
+                    <div className="px-12 mx-auto max-w-7xl ">
+                        <div className="w-full mx-auto md:w-11/12 xl:w-9/12 md:text-center">
+                            <h1 className="mb-5  text-4xl capitalize  font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight lg:mb-12">
+                                <span>Welcome</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">to Our College </span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">Project Showcase </span> <span>website!</span>
                             </h1>
-                            <p className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
+                            <h1 className="mb-8  capitalize  font-semibold font-serif leading-none tracking-normal  md:text-4xl md:tracking-tight lg:mb-12">
+                                <span>"Start With</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-blue-900 lg:inline"> Curiosity,Finish </span> <span> with Excellence" </span>
+                            </h1>
+                            <p className="px-0 mb-8 text-lg text-gray-700 md:text-xl lg:px-24 font-semibold capitalize   ">
                                 "The purpose of this project is to provide a platform for students to showcase their innovative college projects. It aims to inspire creativity, collaboration, and learning by sharing ideas and achievements with a wider audience."
                             </p>
-                            <div className="mb-4 space-x-0 md:space-x-2 md:mb-8 ">
-                                <a href="/browseproject" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-900 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105">
+                            <div className="mb-4 space-x-0 md:space-x-7 md:mb-2 font-semibold ">
+                                <Link href="/browseproject" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-900 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105">
                                     Get Started
                                     <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                                </a>
-                                <a href="/learnmore" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-semibold bg-green-400 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105">
+                                </Link>
+                                <Link href="/learnmore" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-semibold bg-green-400 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105">
                                     Read More
                                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -46,7 +49,7 @@ const Home = () => {
                             </div>
                             {/*  */}
                             <div className="lg:w-[60%] p-4 w-full h-full shadow-xl shadow-green-300/40 flex flex-col justify-center items-center sm:px-6 px-4 rounded-xl">
-                                <h2 className="text-4xl text-center text-green-600 dark:text-green-400 font-bold px-4 py-1 md:mt-0 mt-10 ">
+                                <h2 className="text-4xl text-center text-black font-serif dark:text-green-400 font-bold px-4 py-1 md:mt-0 mt-10 ">
                                     About Us
                                 </h2>
 
@@ -54,9 +57,9 @@ const Home = () => {
                                     "Welcome to College Project Showcase! Our mission is to provide a platform where students can display their innovative projects, share knowledge, and inspire others. We aim to bridge the gap between creativity and opportunity by connecting bright minds with potential collaborators, educators, and recruiters. Explore, learn, and get inspired!"
                                 </p>
                                 {/* button */}
-                                <button className="lg:mt-10 mt-6 lg:px-6 px-4 lg:py-4 py-2 bg-blue-900 rounded-sm lg:text-xl text-lg text-white font-semibold hover:scale-105">
-                                    Read More
-                                </button>
+                                <Link href="/aboutus" className="lg:mt-10 mt-6 lg:px-6 px-4 lg:py-4 py-2 bg-blue-900 rounded-sm lg:text-xl text-lg text-white font-semibold hover:scale-105">
+                                   Read More
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -285,6 +288,7 @@ const Home = () => {
                                 </p>
                             </div>
                             {/* question - end */}
+                            
                         </div>
                     </div>
                 </div>

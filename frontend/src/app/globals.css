@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.home-bg {
-  background-image: linear-gradient(90deg, #413e3ee3, #10101072),
-    url('https://imajineweb.com/wp-content/uploads/2017/06/focus-group.jpg');
-}

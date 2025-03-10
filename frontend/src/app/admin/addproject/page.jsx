@@ -121,7 +121,7 @@ const Addproject = () => {
       <div className=" max-w-xl mx-auto mt-0 bg-white border rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
         <div className="p-4 sm:p-7 bg-gradient-to-r from-white to-blue-100">
           <div className="text-center">
-            <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
+            <h1 className="block text-2xl font-bold font-serif text-gray-800 dark:text-white">
               Add Project From
             </h1>
             <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
@@ -135,7 +135,7 @@ const Addproject = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm mb-2 dark:text-white"
+                    className="block text-sm mb-2 dark:text-white font-serif"
                   >
                     Project Name
                   </label>
@@ -170,7 +170,7 @@ const Addproject = () => {
                   <div className="flex justify-between items-center">
                     <label
                       htmlFor="password"
-                      className="block text-sm mb-2 dark:text-white"
+                      className="block text-sm mb-2 dark:text-white font-serif"
                     >
                       Video
                     </label>
@@ -204,7 +204,7 @@ const Addproject = () => {
                   <div className="flex justify-between items-center">
                     <label
                       htmlFor="password"
-                      className="block text-sm mb-2 dark:text-white"
+                      className="block text-sm mb-2 dark:text-white font-serif"
                     >
                       Image
                     </label>
@@ -239,7 +239,7 @@ const Addproject = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm mb-2 dark:text-white"
+                    className="block text-sm mb-2 dark:text-white font-serif"
                   >
                     Batch
                   </label>
@@ -280,7 +280,7 @@ const Addproject = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm mb-2 dark:text-white"
+                    className="block text-sm mb-2 dark:text-white font-serif"
                   >
                     Branch
                   </label>
@@ -323,7 +323,7 @@ const Addproject = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm mb-2 dark:text-white"
+                    className="block text-sm mb-2 dark:text-white font-serif"
                   >
                     Category
                   </label>
@@ -350,7 +350,7 @@ const Addproject = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm mb-2 dark:text-white"
+                    className="block text-sm mb-2 dark:text-white font-serif"
                   >
                     Description
                   </label>
@@ -384,7 +384,7 @@ const Addproject = () => {
                 <div>
                   <label
                     htmlFor="student"
-                    className="block text-sm mb-2 dark:text-white"
+                    className="block text-sm mb-2 dark:text-white font-serif"
                   >
                     Select Student
                   </label>
