@@ -4,6 +4,8 @@ import { useFormik } from 'formik';
 import React from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const signup = () => {
     const signupForm = useFormik({
         initialValues: {
@@ -17,7 +19,7 @@ const signup = () => {
             console.log(res.status);
             if (res.status === 200) {
                 toast.success('Register in successfully');
-                localStorage.setItem('token', res.data.token);  // then catch
+                !ISSERVER && localStorage.setItem('token', res.data.token);  // then catch
             }
         }
     })

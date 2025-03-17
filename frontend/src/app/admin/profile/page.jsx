@@ -4,8 +4,10 @@ import { Formik } from 'formik';
 import React, { useEffect, useState, useRef } from 'react';
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const Profile = () => {
-    const token = localStorage.getItem('token');
+    const token = !ISSERVER && localStorage.getItem('token');
     const [userData, setUserData] = useState(null);
     const [profileImage, setProfileImage] = useState('');
     const fileInputRef = useRef(null);
@@ -62,8 +64,8 @@ const Profile = () => {
 
     }
     return (
-        <div>
-            <div className="  dark:bg-gray-800 flex flex-wrap items-center  justify-center mt-5 mb-5">
+        <div className='bg-gradient-to-r from-indigo-100 to-green-100'>
+            <div className="  dark:bg-gray-800 flex flex-wrap items-center  justify-center mt-0 mb-0">
                 <div className="container lg:w-1/3 sm:w-full md:w-1/2 bg-white shadow-2xl rounded-xl transform duration-200 easy-in-out border border-gray-300">
                     <div className="h-32 overflow-hidden">
                         <img

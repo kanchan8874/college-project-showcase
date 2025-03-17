@@ -39,7 +39,7 @@ const StudentNavbar = () => {
                     <div className="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
                       
                         <Link
-                            href="/signup"
+                            href="#"
                             className="inline-block rounded-lg bg-white px-8 py-2 text-center text-sm font-bold text-black outline-none"
                         >
                             Logout

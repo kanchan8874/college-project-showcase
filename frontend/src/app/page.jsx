@@ -6,36 +6,36 @@ const Home = () => {
     return (
         <>
             <MainNavbar />
-            <div className='pt-0'>
-                <section className="pt-24 bg-white">
-                    <div className="px-12 mx-auto max-w-7xl ">
+            {/* hero Section */}
+            <div className="pt-0">
+                <section className="relative pt-24 bg-gradient-to-r from-gray-100 to-white h-screen sm:h-[90vh] lg:h-[100vh">
+                    <div className="absolute inset-0 bg-cover bg-center opacity-10"
+                        style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1701509665932-e38d5eaad17d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D')" }}></div>
+                    <div className="relative px-12 mx-auto max-w-7xl">
                         <div className="w-full mx-auto md:w-11/12 xl:w-9/12 md:text-center">
-                            <h1 className="mb-5  text-4xl capitalize  font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight lg:mb-12">
-                                <span>Welcome</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">to Our College </span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">Project Showcase </span> <span>website!</span>
+                            <h1 className="mb-5 text-4xl capitalize font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight lg:mb-12 animate-fadeIn">
+                                <span>Welcome</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline">to Our College </span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline">Project Showcase </span> <span>website!</span>
                             </h1>
-                            <h1 className="mb-8  capitalize  font-semibold font-serif leading-none tracking-normal  md:text-4xl md:tracking-tight lg:mb-12">
-                                <span>"Start With</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-blue-900 lg:inline"> Curiosity,Finish </span> <span> with Excellence" </span>
-                            </h1>
-                            <p className="px-0 mb-8 text-lg text-gray-700 md:text-xl lg:px-24 font-semibold capitalize   ">
+                            <h2 className="mb-8 capitalize font-semibold font-serif leading-none tracking-normal md:text-4xl md:tracking-tight lg:mb-12 animate-fadeIn delay-1s">
+                                <span>"Start With</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline"> Curiosity, Finish </span> <span> with Excellence"</span>
+                            </h2>
+                            <p className="px-0 mb-8 text-lg text-gray-800 md:text-xl lg:px-24 font-semibold capitalize animate-fadeIn delay-2s">
                                 "The purpose of this project is to provide a platform for students to showcase their innovative college projects. It aims to inspire creativity, collaboration, and learning by sharing ideas and achievements with a wider audience."
                             </p>
-                            <div className="mb-4 space-x-0 md:space-x-7 md:mb-2 font-semibold ">
-                                <Link href="/browseproject" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-900 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105">
+                            <div className="mb-4 space-x-0 md:space-x-7 md:mb-2 font-semibold  delay-3s">
+                                <Link href="/browseproject" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-900 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105 transition-transform duration-300">
                                     Get Started
-                                    <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                                 </Link>
-                                <Link href="/learnmore" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-semibold bg-green-400 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105">
+                                <Link href="/learnmore" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-semibold bg-green-400 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105 transition-transform duration-300">
                                     Read More
-                                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                                 </Link>
+
                             </div>
                         </div>
                     </div>
-                    <>
-                    </>
                 </section>
                 {/* ABOUT Section */}
-                <div className="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900">
+                <div className="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900 ">
                     <div className="w-full h-full flex flex-col justify-center items-center sm:px-4 px-2">
                         {/*  */}
                         <div className="lg:w-[90%] w-full mx-auto flex flex-col lg:gap-6 lg:flex-row items-center justify-center ">
@@ -58,7 +58,7 @@ const Home = () => {
                                 </p>
                                 {/* button */}
                                 <Link href="/aboutus" className="lg:mt-10 mt-6 lg:px-6 px-4 lg:py-4 py-2 bg-blue-900 rounded-sm lg:text-xl text-lg text-white font-semibold hover:scale-105">
-                                   Read More
+                                    Read More
                                 </Link>
                             </div>
                         </div>
@@ -70,58 +70,51 @@ const Home = () => {
                         {/* text - start */}
                         <div className="mb-10 md:mb-16">
                             <h1 className="mb-8 font-serif text-4xl font-bold leading-none tracking-normal text-gray-900 md:text-5xl md:tracking-tight text-center">
-                                <span>Why</span> <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline"> it is </span> <span> important ?</span>
+                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-blue-900 to-purple-950 lg:inline">Why it is important? </span> 
                             </h1>
-                            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                                This is a section of some simple filler text, also known as placeholder
-                                text. It shares some characteristics of a real written text but is
-                                random or otherwise generated.
+                            <p className="mx-auto max-w-screen-md text-center text-gray-600 md:text-lg font-semibold font-serif">
+                            "There are some  important points  to explaining why a College Project Showcase Website is important"
                             </p>
                         </div>
                         {/* text - end */}
                         <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3  ">
                             {/* feature - start */}
                             <div className="flex flex-col rounded-xl  p-6 md:p-6 hover:scale-110  shadow-lg hover:bg-orange-400  hover:text-white  ">
-                                <h3 className="mb-2 text-lg font-bold md:text-xl text-center">Educational Resource
+                                <h3 className="mb-2 text-lg font-bold  md:text-xl text-center font-serif">Highlights Student Talent
                                 </h3>
-                                Filler text is dummy text which has no meaning however looks very
-                                similar to real text.
+                                Showcases students' skills, creativity, and technical knowledge to potential employers and faculty..
 
                             </div>
                             {/* feature - end */}
                             {/* feature - start */}
                             <div className="flex flex-col rounded-lg  p-4 md:p-6 hover:scale-110  shadow-lg text-center hover:bg-orange-400 hover:text-white">
-                                <h3 className="mb-2 text-lg font-bold md:text-xl">Security</h3>
-                                Filler text is dummy text which has no meaning however looks very
-                                similar to real text.
+                                <h3 className="mb-2 text-lg font-bold md:text-xl font-serif">Easy Access to Projects</h3>
+                                Provides a centralized platform where faculty, students, and recruiters can explore past and ongoing projects
                             </div>
                             {/* feature - end */}
                             {/* feature - start */}
                             <div className="flex flex-col rounded-lg  p-4 md:p-6 hover:scale-110  shadow-lg text-center hover:bg-orange-400 hover:text-white">
-                                <h3 className="mb-2 text-lg font-bold md:text-xl">Cloud</h3>
-                                Filler text is dummy text which has no meaning however looks very
-                                similar to real text.
+                                <h3 className="mb-2 text-lg font-bold md:text-xl font-serif">Boosts College Reputation</h3>
+                                Enhances the institution’s image by displaying the quality of student work to industries and prospective students.
                             </div>
                             {/* feature - end */}
                             {/* feature - start */}
                             <div className="flex flex-col rounded-lg  p-4 md:p-6 hover:scale-110 hover:bg-orange-400 hover:text-white shadow-lg">
-                                <h3 className="mb-2 text-lg font-bold md:text-xl text-center">Speed</h3>
-                                Filler text is dummy text which has no meaning however looks very
-                                similar to real text.
+                                <h3 className="mb-2 text-lg font-bold md:text-xl text-center font-serif">Networking & Collaboration</h3>
+                                Connects students with alumni, mentors, and industry experts, encouraging collaboration and knowledge sharing.
 
                             </div>
                             {/* feature - end */}
                             {/* feature - start */}
                             <div className="flex flex-col rounded-lg  p-4 md:p-6 hover:scale-110 hover:bg-orange-400 hover:text-white  shadow-lg">
-                                <h3 className="mb-2 text-lg font-bold text-center md:text-xl">Support</h3>
-                                Filler text is dummy text which has no meaning however looks very
-                                similar to real text.
+                                <h3 className="mb-2 text-lg font-bold text-center md:text-xl font-serif">Improves Career Opportunities</h3>
+                                Helps students showcase their projects to recruiters, increasing job and internship opportunities.
                             </div>
                             {/* feature - end */}
                             {/* feature - start */}
                             <div className="flex flex-col rounded-lg  p-4 md:p-6 hover:scale-110 hover:bg-orange-400 hover:text-white shadow-lg">
-                                <h3 className="mb-2 text-lg text-center font-bold md:text-xl">Dark Mode</h3>
-                                Filler text is dummy text which has no meaning however looks very
+                                <h3 className="mb-2 text-lg text-center font-bold md:text-xl font-serif">Showcases Teamwork & Leadership</h3>
+                                Highlights collaboration skills when working on team projects, making students more appealing to employers.
 
                             </div>
                             {/* feature - end */}
@@ -145,7 +138,7 @@ const Home = () => {
                         {/* text - end */}
                         <div className="grid gap-8 sm:grid-cols-2 sm:gap-y-10 xl:grid-cols-3">
                             {/* question - start */}
-                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl">
+                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl hover:scale-105 ">
                                 <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-900 text-white">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +162,7 @@ const Home = () => {
                             </div>
                             {/* question - end */}
                             {/* question - start */}
-                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl">
+                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl hover:scale-105">
                                 <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-white font-serif">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +186,7 @@ const Home = () => {
                             </div>
                             {/* question - end */}
                             {/* question - start */}
-                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl">
+                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl hover:scale-105">
                                 <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-900 text-white font-serif">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +210,7 @@ const Home = () => {
                             </div>
                             {/* question - end */}
                             {/* question - start */}
-                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl">
+                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl hover:scale-105">
                                 <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-900 text-white font-serif">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -241,7 +234,7 @@ const Home = () => {
                             </div>
                             {/* question - end */}
                             {/* question - start */}
-                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl">
+                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl hover:scale-105">
                                 <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-white font-serif">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +258,7 @@ const Home = () => {
                             </div>
                             {/* question - end */}
                             {/* question - start */}
-                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl">
+                            <div className="relative rounded-lg bg-gray-100 p-5 pt-8 shadow-2xl hover:scale-105">
                                 <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-white font-serif">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -288,7 +281,7 @@ const Home = () => {
                                 </p>
                             </div>
                             {/* question - end */}
-                            
+
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@ import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const categories = [
   'Web Development',
   'App Development',
@@ -71,7 +73,7 @@ const Addproject = () => {
       console.log(res.status);
       if (res.status === 200) {
         toast.success('Logged in successfully');
-        localStorage.setItem('token', res.data.token);
+        !ISSERVER && localStorage.setItem('token', res.data.token);
       }
     }
   })
@@ -117,9 +119,9 @@ const Addproject = () => {
 
   }
   return (
-    <div className=' mt-5 mb-5' >
-      <div className=" max-w-xl mx-auto mt-0 bg-white border rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
-        <div className="p-4 sm:p-7 bg-gradient-to-r from-white to-blue-100">
+    <div className=' mt-0 mb-0 bg-gradient-to-r from-indigo-100 to-green-100 '>
+      <div className=" max-w-xl mx-auto mt-0 bg-white border rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700 ">
+        <div className="p-4 sm:p-7 ">
           <div className="text-center">
             <h1 className="block text-2xl font-bold font-serif text-gray-800 dark:text-white">
               Add Project From
@@ -253,12 +255,12 @@ const Addproject = () => {
                       required=""
                       aria-describedby="email-error"
                     >
-                    <option value="">Select Batch</option>
-                    {
-                      batch.map(category => (
-                        <option key={category} value={category}>{category}</option>
-                      ))
-                    }
+                      <option value="">Select Batch</option>
+                      {
+                        batch.map(category => (
+                          <option key={category} value={category}>{category}</option>
+                        ))
+                      }
                     </select>
                     <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                       <svg

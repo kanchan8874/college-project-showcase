@@ -4,6 +4,8 @@ import { useFormik } from 'formik';
 import React from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const categories = [
     'Web Development',
     'App Development',
@@ -53,13 +55,13 @@ const Addstudent = () => {
             console.log(res.status);
             if (res.status === 200) {
                 toast.success('Logged in successfully');
-                localStorage.setItem('token', res.data.token);
+                !ISSERVER &&  localStorage.setItem('token', res.data.token);
             }
         }
     })
     return (
-        <div>
-            <div className="max-w-xl mx-auto mt-7 mb-7 bg-white border border-gray-200 rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
+        <div className='bg-gradient-to-r from-indigo-100 to-green-100'>
+            <div className="max-w-xl mx-auto mt-0 mb-0 bg-white border border-gray-200 rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-4 sm:p-7">
                     <div className="text-center">
                         <h1 className="block text-2xl font-bold text-gray-800 dark:text-white font-serif ">

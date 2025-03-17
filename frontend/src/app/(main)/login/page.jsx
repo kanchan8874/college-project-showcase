@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const Login = () => {
   const router = useRouter();
   const loginForm = useFormik({
@@ -19,7 +21,7 @@ const Login = () => {
       console.log(res.status);
       if (res.status === 200) {
         toast.success('Logged in successfully');
-        localStorage.setItem('token', res.data.token);
+        !ISSERVER && localStorage.setItem('token', res.data.token);
         router.push('/admin/addproject');
       }
     }
@@ -160,6 +162,7 @@ const Login = () => {
                   </p>
                 </div>
                 {/* End Form Group */}
+
                 {/* Checkbox */}
                 <div className="flex items-center">
                   <div className="flex">

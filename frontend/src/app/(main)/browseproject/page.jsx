@@ -71,7 +71,7 @@ const BrowseProject = () => {
 
   return (
     <>
-      <div>
+      <div className=' bg-gradient-to-r from-indigo-100 to-green-100'>
         <>
           {/* Hero */}
           <div className="relative overflow-hidden">
@@ -161,7 +161,7 @@ const BrowseProject = () => {
         </>
       </div>
       {/* Card Blog */}
-      <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-2 ">
+      <div className="max-w-[95rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-0  bg-gradient-to-r from-indigo-100 to-green-100   ">
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card */}

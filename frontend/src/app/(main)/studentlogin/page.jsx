@@ -5,6 +5,8 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const Studentlogin = () => {
   const router = useRouter();
   const loginForm = useFormik({
@@ -19,7 +21,7 @@ const Studentlogin = () => {
       console.log(res.status);
       if (res.status === 200) {
         toast.success('Logged in successfully');
-        localStorage.setItem('token', res.data.token);
+        !ISSERVER && localStorage.setItem('token', res.data.token);
         router.push('/student/addproject');
       }
     }

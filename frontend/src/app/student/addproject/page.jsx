@@ -4,6 +4,8 @@ import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const categories = [
     'Web Development',
     'App Development',
@@ -69,7 +71,7 @@ const Addproject = () => {
             console.log(res.status);
             if (res.status === 200) {
                 toast.success('Logged in successfully');
-                localStorage.setItem('token', res.data.token);
+                !ISSERVER && localStorage.setItem('token', res.data.token);
             }
         }
     })

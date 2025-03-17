@@ -4,6 +4,8 @@ import { useFormik } from 'formik';
 import React from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const Contact = () => {
   const contectForm = useFormik({
     initialValues: {
@@ -20,7 +22,7 @@ const Contact = () => {
       console.log(res.status);
       if (res.status === 200) {
         toast.success('Register in successfully');
-        localStorage.setItem('token', res.data.token);  // then catch
+        !ISSERVER && localStorage.setItem('token', res.data.token);  // then catch
       }
     }
   });
@@ -28,8 +30,8 @@ const Contact = () => {
   return (
     <>
       {/* Contact Us */}
-      <div div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-2 lg:py-2 mx-auto   " >
-        <div className="max-w-xl mx-auto">
+      <div div className="max-w-[95rem] px-4 py-10 sm:px-6 lg:px-2 lg:py-2 mx-auto bg-gradient-to-r from-indigo-100 to-green-100 " >
+        <div className="max-w-xl mx-auto ">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white">
               Contact us
@@ -128,10 +130,9 @@ const Contact = () => {
                     id="details"
                     onChange={contectForm.handleChange}
                     value={contectForm.values.details}
-
                     rows={4}
                     className="border py-3 px-4 block w-full border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    defaultValue={""}
+
                   />
                 </div>
               </div>
