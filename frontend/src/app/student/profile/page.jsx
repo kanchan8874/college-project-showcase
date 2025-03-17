@@ -4,8 +4,10 @@ import { Formik } from 'formik';
 import React, { useEffect, useState, useRef } from 'react';
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const Profile = () => {
-    const token = localStorage.getItem('token');
+    const token = !ISSERVER && localStorage.getItem('token');
     const [userData, setUserData] = useState(null);
     const [profileImage, setProfileImage] = useState('');
     const fileInputRef = useRef(null);

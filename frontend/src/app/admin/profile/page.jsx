@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const ISSERVER = typeof window === 'undefined';
 
-const Profile = () => {
+const ProfileAdmin = () => {
     const token = !ISSERVER && localStorage.getItem('token');
     const [userData, setUserData] = useState(null);
     const [profileImage, setProfileImage] = useState('');
@@ -280,4 +280,4 @@ const Profile = () => {
     );
 }
 
-export default Profile;
+export default ProfileAdmin;
