@@ -8,7 +8,7 @@ const ManageProject = () => {
   const [project, setStudent] = useState([]);
 
   const getStudentData = async () => {
-    const res = await fetch('http://localhost:5000/project/getallproject');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project/getallProject`);
     // console.log(res.data);
     console.log(res.status);
 
@@ -24,7 +24,7 @@ const ManageProject = () => {
   }, []);
 
   const deleteProject = (id) => {
-    axios.delete('http://localhost:5000/project/delete/' + id)
+    axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/project/delete` + id)
       .then((result) => {
         toast.success('project Deleted Successfully');
         getStudentData();
@@ -37,7 +37,7 @@ const ManageProject = () => {
   }
 
   const approveProject = (id, status) => {
-    axios.put('http://localhost:5000/project/update/' + id, { approved: status })
+    axios.put(`${process.env.NEXT_PUBLIC_API_URL}/project/update` + id, { approved: status })
       .then((result) => {
         toast.success('project updated Successfully');
         getStudentData();

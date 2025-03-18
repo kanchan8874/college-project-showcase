@@ -47,7 +47,7 @@ const Addproject = () => {
   const [studentList, setStudentList] = useState([]);
 
   const fetchStudents = async () => {
-    const res = await axios.get('http://localhost:5000/student/getall');
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/student/getall`);
     console.log(res.data);
     setStudentList(res.data);
   }
@@ -68,7 +68,7 @@ const Addproject = () => {
     },
     onSubmit: async (values) => {
       console.log(values);
-      const res = await axios.post('http://localhost:5000/project/add', { ...values, approved: true })
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/project/add`, { ...values, approved: true })
       console.log(res.data);
       console.log(res.status);
       if (res.status === 200) {

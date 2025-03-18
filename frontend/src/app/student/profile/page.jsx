@@ -32,7 +32,7 @@ const Profile = () => {
     const submitForm = (values) => {
         console.log(values);
         values.avatar = image;
-        axios.put('http://localhost:5000/student/update/' + userData._id, values)
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/student/update` + userData._id, values)
             .then((result) => {
                 toast.success('User updated successfully');
                 fetchUserData();

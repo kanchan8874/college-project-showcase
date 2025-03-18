@@ -32,7 +32,7 @@ const ProfileAdmin = () => {
     const submitForm = (values) => {
         console.log(values);
         values.avatar = image;
-        axios.put('http://localhost:5000/user/update/' + userData._id, values)
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update` + userData._id, values)
             .then((result) => {
                 toast.success('user Updated successfully');
                 // router.back();

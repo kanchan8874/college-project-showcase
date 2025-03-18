@@ -8,7 +8,7 @@ const ManageStudent = () => {
     const [student, setStudent] = useState([]);
 
     const getStudentData = async () => {
-        const res = await fetch('http://localhost:5000/student/getall');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/getall`);
         // console.log(res.data);
         console.log(res.status);
 

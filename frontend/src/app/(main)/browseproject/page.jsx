@@ -9,7 +9,7 @@ const BrowseProject = () => {
   const inputRef = useRef(null);
 
   const fetchProduct = () => {
-    axios.get('http://localhost:5000/project/getall')
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/project/getall`)
       .then((result) => {
         console.table(result.data);
         setProjectList(result.data);
