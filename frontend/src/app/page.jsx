@@ -8,7 +8,7 @@ const Home = () => {
             <MainNavbar />
             {/* hero Section */}
             <div className="pt-0">
-                <section className="relative pt-24 bg-gradient-to-r from-gray-100 to-white h-screen sm:h-[90vh] lg:h-[100vh">
+                <section className="relative py-10 bg-gradient-to-r from-gray-100 to-white h-full sm:h-[100vh] lg:h-[100vh]">
                     <div className="absolute inset-0 bg-cover bg-center opacity-10"
                         style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1701509665932-e38d5eaad17d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D')" }}></div>
                     <div className="relative px-12 mx-auto max-w-7xl">
@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                 </section>
                 {/* ABOUT Section */}
-                <div className="w-full mt-10 sm:mt-0 lg:h-screen h-full m-auto flex items-center justify-cetner py-10 bg-gray-50 dark:bg-gray-900 ">
+                <div className="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900 ">
                     <div className="w-full h-full flex flex-col justify-center items-center sm:px-4 px-2">
                         {/*  */}
                         <div className="lg:w-[90%] w-full mx-auto flex flex-col lg:gap-6 lg:flex-row items-center justify-center ">
