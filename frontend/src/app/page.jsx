@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                 </section>
                 {/* ABOUT Section */}
-                <div className="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900 ">
+                <div className="w-full mt-10 sm:mt-0 lg:h-screen h-full m-auto flex items-center justify-cetner py-10 bg-gray-50 dark:bg-gray-900 ">
                     <div className="w-full h-full flex flex-col justify-center items-center sm:px-4 px-2">
                         {/*  */}
                         <div className="lg:w-[90%] w-full mx-auto flex flex-col lg:gap-6 lg:flex-row items-center justify-center ">
