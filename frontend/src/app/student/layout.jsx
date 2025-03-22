@@ -1,5 +1,5 @@
 import React from 'react'
-import StudentNavbar from './Navbar'
+import StudentNavbar from './StudentNavbar'
 
 const Layout = ({ children }) => {
     return (

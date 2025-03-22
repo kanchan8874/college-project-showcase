@@ -12,7 +12,7 @@ const Viewproject = () => {
 
 
     const getProjectDesign = async () => {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/project/getbyid` + id);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/project/getbyid/${id}`);
         console.log(res.data);
         setProjectData(res.data);
     }
