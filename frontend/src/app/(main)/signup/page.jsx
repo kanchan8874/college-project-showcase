@@ -3,14 +3,28 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react'
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
 
 const ISSERVER = typeof window === 'undefined';
+
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().required('password is required'),
+  confirmPassword: Yup.string().required('Confirm password is required')
+    .oneOf([Yup.ref('password'), null], 'password must match')
+
+});
+
 
 const signup = () => {
     const signupForm = useFormik({
         initialValues: {
             email: '',
-            password: ''
+            password: '',
+            confirmPassword: ''
         },
         onSubmit: async (values) => {
             console.log(values);

@@ -4,8 +4,15 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
 
 const ISSERVER = typeof window === 'undefined';
+
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().required('password is required')
+});
+
 
 const Login = () => {
   const router = useRouter();
@@ -24,7 +31,8 @@ const Login = () => {
         !ISSERVER && localStorage.setItem('token', res.data.token);
         router.push('/admin/addproject');
       }
-    }
+    },
+    validationSchema: LoginSchema
   });
 
   return (

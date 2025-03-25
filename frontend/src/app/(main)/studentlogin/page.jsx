@@ -4,8 +4,15 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
 
 const ISSERVER = typeof window === 'undefined';
+
+const SignupSchema = Yup.object().shape({
+  rollno: Yup.string().required('Roll no is required'),
+  password: Yup.string().required('Password is required')
+})
+
 
 const Studentlogin = () => {
   const router = useRouter();
@@ -14,18 +21,25 @@ const Studentlogin = () => {
       rollno: '',
       password: ''
     },
-    onSubmit: async (values) => {
+    onSubmit: (values) => {
       console.log(values);
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/student/add`, values)
-      console.log(res.data);
-      console.log(res.status);
-      if (res.status === 200) {
-        toast.success('Logged in successfully');
-        !ISSERVER && localStorage.setItem('token', res.data.token);
-        router.push('/student/addproject');
-      }
-    }
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/student/authenticate`, values)
+        .then((res) => {
+          console.log(res.data);
+          console.log(res.status);
+          toast.success('Logged in successfully');
+          !ISSERVER && localStorage.setItem('token', res.data.token);
+          router.push('/student/addproject');
+        }).catch((err) => {
+          console.log(err);
+          toast.error('Invalid credentials');
+        });
+    },
+    validationSchema: SignupSchema
+
   })
+  console.log(loginForm.errors);
+
 
 
   return (
@@ -114,9 +128,14 @@ const Studentlogin = () => {
                       </svg>
                     </div>
                   </div>
-                  <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-                    Please include a valid email address so we can get back to you
-                  </p>
+                  {
+                    (loginForm.touched.rollno && loginForm.errors.rollno) && (
+
+                      <p className=" text-xs text-red-600 mt-2" id="email-error">
+                        {loginForm.errors.rollno}
+                      </p>
+                    )
+                  }
                 </div>
                 {/* End Form Group */}
                 {/* Form Group */}
@@ -125,8 +144,7 @@ const Studentlogin = () => {
                     <label
                       htmlFor="password"
                       className="block text-sm mb-2 dark:text-white"
-                    >
-                      Password
+                    > Password
                     </label>
                     <a
                       className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
@@ -158,8 +176,8 @@ const Studentlogin = () => {
                       </svg>
                     </div>
                   </div>
-                  <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                    8+ characters required
+                  <p className=" text-xs text-red-600 mt-2" id="password-error">
+                    5+ characters required
                   </p>
                 </div>
                 {/* End Form Group */}
