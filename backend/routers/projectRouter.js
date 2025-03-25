@@ -65,16 +65,26 @@ router.get('/getbyid/:id', (req, res) => {
         });
 })
 //delete
-router.delete('/delete/:id', (req, res) => {
-    Model.findByIdAndDelete(req.params.id)
-        .then((result) => {
-            res.status(200).json(result);
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const deletedProject = await Model.findByIdAndDelete(req.params.id);
+        
+        if (!deletedProject) {
+            return res.status(404).json({ message: 'Project not found' });
+        }
+        
+        res.status(200).json({ 
+            success: true, 
+            message: 'Project deleted successfully' 
         });
-
+    } catch (error) {
+        console.error('Delete error:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: 'Error deleting project', 
+            error: error.message 
+        });
+    }
 });
 
 //update
