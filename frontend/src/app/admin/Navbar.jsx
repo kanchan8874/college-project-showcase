@@ -12,7 +12,7 @@ const AdminNavbar = () => {
     return (
         <div className="bg-gradient-to-r from-blue-950 bg-blue-950 shadow-xl relative">
             <div className="mx-auto max-w-screen-xl px-1 md:px-8">
-                <header className="flex items-center justify-between py-2 md:py-4">
+                <header className="flex items-center justify-between py-2 md:py-4 h-16">
                     {/* logo - start */}
                     <Link
                         href="/"

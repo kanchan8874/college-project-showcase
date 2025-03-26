@@ -8,7 +8,7 @@ const Home = () => {
             <MainNavbar />
             {/* hero Section */}
             <div className="pt-0">
-                <section className="relative py-10 bg-gradient-to-r from-gray-100 to-white h-full sm:h-[100vh] lg:h-[100vh]">
+                <section className="relative py-10 bg-gradient-to-r from-gray-100 to-white  sm:h-[100vh] lg:h-[100vh] h-full">
                     <div className="absolute inset-0 bg-cover bg-center opacity-10"
                         style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1701509665932-e38d5eaad17d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D')" }}></div>
                     <div className="relative px-12 mx-auto max-w-7xl">
@@ -22,6 +22,10 @@ const Home = () => {
                             <p className="px-0 mb-8 text-lg text-gray-800 md:text-xl lg:px-24 font-semibold capitalize animate-fadeIn delay-2s">
                                 "The purpose of this project is to provide a platform for students to showcase their innovative college projects. It aims to inspire creativity, collaboration, and learning by sharing ideas and achievements with a wider audience."
                             </p>
+                            {/* Image section with hover effects */}
+                            <div className="lg:mt-14 sm:mt-10 mt-12  transition-transform duration-500 ">
+
+                            </div>
                             <div className="mb-4 space-x-0 md:space-x-7 md:mb-2 font-semibold  delay-3s">
                                 <Link href="/browseproject" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-900 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105 transition-transform duration-300">
                                     Get Started
@@ -29,10 +33,11 @@ const Home = () => {
                                 <Link href="/learnmore" className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-semibold bg-green-400 rounded-2xl sm:w-auto sm:mb-0 hover:scale-105 transition-transform duration-300">
                                     Read More
                                 </Link>
-
                             </div>
                         </div>
                     </div>
+
+
                 </section>
                 {/* ABOUT Section */}
                 <div className="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900 ">
@@ -70,10 +75,10 @@ const Home = () => {
                         {/* text - start */}
                         <div className="mb-10 md:mb-16">
                             <h1 className="mb-8 font-serif text-4xl font-bold leading-none tracking-normal text-gray-900 md:text-5xl md:tracking-tight text-center">
-                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-blue-900 to-purple-950 lg:inline">Why it is important? </span> 
+                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-blue-900 to-purple-950 lg:inline">Why it is important? </span>
                             </h1>
                             <p className="mx-auto max-w-screen-md text-center text-gray-600 md:text-lg font-semibold font-serif">
-                            "There are some  important points  to explaining why a College Project Showcase Website is important"
+                                "There are some  important points  to explaining why a College Project Showcase Website is important"
                             </p>
                         </div>
                         {/* text - end */}
@@ -121,6 +126,25 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                <div className="lg:mt-14 sm:mt-10 mt-12  transition-transform duration-500 ">
+                    <img
+                        className="lg:block hidden w-full rounded-xl shadow-2xl transform transition-all duration-300"
+                        src="https://i.ibb.co/GvwJnvn/Group-736.png"
+                        alt="Group of people Chilling"
+                    />
+                    <img
+                        className="lg:hidden sm:block hidden w-full"
+                        src="https://i.ibb.co/5sZTmHq/Rectangle-116.png"
+                        alt="Group of people Chilling"
+                    />
+                    <img
+                        className="sm:hidden block w-full"
+                        src="https://i.ibb.co/zSxXJGQ/Rectangle-122.png"
+                        alt="Group of people Chilling"
+                    />
+                </div>
+
+
                 {/* frequent ask question */}
                 <div className="bg-white py-6 sm:py-8 lg:py-12">
                     <div className="mx-auto max-w-screen-2xl px-4 md:px-8">

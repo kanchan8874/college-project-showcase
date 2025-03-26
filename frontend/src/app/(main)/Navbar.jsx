@@ -24,7 +24,7 @@ const MainNavbar = () => {
         <>
             <header className="bg-gradient-to-r from-blue-950 to-blue-950 shadow-2xl relative">
                 {/* Desktop Navbar */}
-                <div className="h-20 hidden md:flex items-center justify-between px-5">
+                <div className="h-18 hidden md:flex items-center justify-between px-5">
                     <Link href="/" className="flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
                         <div className='bg-white p-2 rounded-2xl'>
                             <img className='size-12' src="/images/logo2-removebg.png" alt="logo" />

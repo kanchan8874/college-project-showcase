@@ -124,21 +124,21 @@ const BrowseProject = () => {
                   <div className='mt-6 flex gap-5 justify-between  border-gray-200 rounded-full p-3 '>
                     <select onChange={filterBranch} className='w-full border border-black shadow-2xl px-5 py-2 rounded-full h hover:scale-105  hover:bg-yellow-300 font-bold font-serif bg-slate-200' >
                       <option className='bg-white' value="">Select Branch</option>
-                      <option className='bg-white' value="IT">I.T.</option>
                       <option className='bg-white' value="C.S.E">C.S.E</option>
                       <option className='bg-white' value="M.E.">M.E.</option>
-                      <option className='bg-white' value="E.C.">E.C.</option>
+                      <option className='bg-white' value="E.C.">E.C.E</option>
                       <option className='bg-white' value="E.E.">E.E.</option>
+                      <option className='bg-white' value="C.S.E">I.T.</option>
+                      <option className='bg-white' value="M.E.">C.E.</option>
+                      <option className='bg-white' value="E.C.">A.I.</option>
+                      <option className='bg-white' value="E.E.">R.E.</option>
                     </select>
 
                     <select onChange={filterBatch} className='w-full border border-black shadow-2xl px-5 py-2 rounded-full hover:scale-105 font-bold font-serif hover:bg-yellow-300 bg-slate-200 ' >
                       <option className='bg-white' value="">Select Batch</option>
-                      <option className='bg-white' value="2015">2015</option>
-                      <option className='bg-white' value="2015">2016</option>
-                      <option className='bg-white' value="2015">2017</option>
-                      <option className='bg-white' value="2015">2018</option>
-                      <option className='bg-white' value="2015">2019</option>
                       <option className='bg-white' value="2015">2020</option>
+                      <option className='bg-white' value="2015">2021</option>
+                      <option className='bg-white' value="2015">2022</option>
                       <option className='bg-white' value="2023">2023</option>
                       <option className='bg-white' value="2024">2024</option>
                       <option className='bg-white' value="2025">2025</option>
@@ -146,11 +146,16 @@ const BrowseProject = () => {
 
                     <select onChange={filterCategory} className='w-full border border-black px-5 py-2 rounded-full hover:scale-105 shadow-2xl font-serif font-bold hover:bg-yellow-300 bg-slate-200 ' >
                       <option className='bg-white' value="">Select Category</option>
-                      <option className='bg-white' value="app development">APP DEVELOPMENT</option>
-                      <option className='bg-white' value="web development">WEB DEVELOPMENT</option>
-                      <option className='bg-white' value="data science">DATA SCIENCE</option>
-                      <option className='bg-white' value="machine development">MACHINE DEVELOPMENT</option>
-                    </select>
+                      <option className='bg-white' value="app development">App Development</option>
+                      <option className='bg-white' value="web development">Web Development</option>
+                      <option className='bg-white' value="game development">Game Development</option>
+                      <option className='bg-white' value="software development">Software Development</option>
+                      <option className='bg-white' value="cloud computing">Cloud Computing</option>
+                      <option className='bg-white' value="image processing">Image Processing</option> 
+                      <option className='bg-white' value="machine learning">Machine Learning</option>  
+                      <option className='bg-white' value="deep learning">Deep Learning</option>  
+                                       
+                      </select>
                   </div>
                   {/* End SVG Element */}
                 </div>

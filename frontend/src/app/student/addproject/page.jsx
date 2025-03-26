@@ -12,26 +12,25 @@ const categories = [
     'Software Development',
     'Game Development',
     'Machine Learning',
-    'Data Science',
-    'Artificial Intelligence',
-    'Cyber Security',
+    'Deep Learning',
+    'image processing',
+    'Cloud computing',
+    'Automobile',
+    'Robotics @ Automation',
+
 ]
 const branch = [
     'C.S.E.',
     'M.E.',
     'E.E.',
-    'E.C.',
+    'E.C.E.',
     'C.E.',
     'I.T.',
-    'N.E.',
-    'B.E.',
+    'A.I.',
+    'R.E.',
 ]
 const batch = [
-    '2015',
-    '2016',
-    '2017',
-    '2018',
-    '2019',
+
     '2020',
     '2021',
     '2022',
