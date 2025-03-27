@@ -19,19 +19,19 @@ const Home = () => {
                     <div className="relative px-12 mx-auto max-w-7xl">
                         <div className="w-full mx-auto md:w-11/12 xl:w-9/12 md:text-center">
                             {/* Main heading with animated gradient */}
-                            <h1 className="mb-5 text-4xl capitalize font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight lg:mb-12 animate-slideDown">
+                            <h1 className="mb-5 text-4xl capitalize font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight lg:mb-12 animate-fadeIn">
                                 <span className="animate-fadeIn">Welcome</span> 
-                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline animate-gradient animate-slideInRight">
+                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline animate-gradient ">
                                     to Our College 
                                 </span> 
-                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline animate-slideInLeft">
+                                <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline ">
                                     Project Showcase 
                                 </span> 
-                                <span className=" inline-block animate-slideInLeft">website!</span>
+                                <span className=" inline-block">website!</span>
                             </h1>
 
                             {/* Subtitle with typing effect */}
-                            <h2 className="mb-8 capitalize font-semibold font-serif leading-none tracking-normal md:text-4xl md:tracking-tight lg:mb-12 animate-typing">
+                            <h2 className="mb-8 capitalize font-semibold font-serif leading-none tracking-normal md:text-4xl md:tracking-tight lg:mb-12 animate-fadeIn delay-1s">
                                 <span>"Start With</span> 
                                 <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-500 to-purple-600 lg:inline ">
                                     Curiosity, Finish 
@@ -40,7 +40,7 @@ const Home = () => {
                             </h2>
 
                             {/* Description with fade-in effect */}
-                            <p className="px-0 mb-8 text-lg text-gray-800 md:text-xl lg:px-24 font-semibold capitalize animate-fadeInUp">
+                            <p className="px-0 mb-8 text-lg text-gray-800 md:text-xl lg:px-24 font-semibold capitalize animate-fadeIn delay-2s">
                                 "The purpose of this project is to provide a platform for students to showcase their innovative college projects. It aims to inspire creativity, collaboration, and learning by sharing ideas and achievements with a wider audience."
                             </p>
 
@@ -64,91 +64,6 @@ const Home = () => {
                 </section>
             </div>
 
-            {/* Add these animations to your existing style jsx block */}
-            <style jsx>{`
-                @keyframes float {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-10px); }
-                }
-
-                @keyframes typing {
-                    from { width: 0 }
-                    to { width: 100% }
-                }
-
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                @keyframes slideInRight {
-                    from {
-                        opacity: 0;
-                        transform: translateX(100px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                @keyframes slideInLeft {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-100px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                .animate-float {
-                    animation: float 6s ease-in-out infinite;
-                }
-
-                .animate-typing {
-                    overflow: hidden;
-                    white-space: nowrap;
-                    animation: typing 3.5s steps(40, end);
-                }
-
-                .animate-fadeInUp {
-                    animation: fadeInUp 1s ease-out;
-                }
-
-                .animate-slideInRight {
-                    animation: slideInRight 1s ease-out;
-                }
-
-                .animate-slideInLeft {
-                    animation: slideInLeft 1s ease-out;
-                }
-
-                .animate-gradient {
-                    background-size: 200% auto;
-                    animation: gradient 5s ease infinite;
-                }
-
-                /* Add hover effects */
-                .hover-lift {
-                    transition: transform 0.3s ease;
-                }
-
-                .hover-lift:hover {
-                    transform: translateY(-5px);
-                }
-
-             
-
-                
-            `}</style>
 
             {/* ABOUT Section */}
             <div className="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900 ">
